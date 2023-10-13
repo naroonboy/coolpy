@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>URL Checker</title>
+    <style>
+        .bulb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .green-bulb {
+            background-color: green;
+        }
+
+        .red-bulb {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>URL Checker</h1>
+    <ul>
+        {% for result in results %}
+            <li>
+                <span class="bulb {% if 'up and running' in result %}green-bulb{% else %}red-bulb{% endif %}"></span>
+                {{ result }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
